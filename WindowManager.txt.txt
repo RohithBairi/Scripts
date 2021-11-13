@@ -1,0 +1,14 @@
+adb shell wm size
+We can display resolution of Android Devices using  this command.
+
+>> adb shell wm size
+Physical size: 1440x3040
+Override size: 1080x2280
+TO modify the screen resolution and the pixel density of your Android’s display.
+
+FHD
+adb shell wm size 1080x2220
+adb shell wm density 420
+HD
+adb shell wm size 720x1560
+adb shell wm density 360

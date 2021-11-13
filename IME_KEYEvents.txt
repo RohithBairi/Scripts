@@ -1,0 +1,62 @@
+ADB Shell KeyEvent commands
+ADB Shell key event commands, To performed by certain hardware buttons or UI options on Android devices.
+adb shell input keyevent 3 // Home btn
+adb shell input keyevent 4 // Back btn
+adb shell input keyevent 5 // Call
+adb shell input keyevent 6 // End call
+adb shell input keyevent 26 // Turn Android device ON and OFF.
+adb shell input keyevent 27 // Camera
+adb shell input keyevent 64 // Open browser
+adb shell input keyevent 66 // Enter
+adb shell input keyevent 67 // Delete (backspace)
+adb shell input keyevent 207 // Contacts
+adb shell input keyevent 220 / 221 // Brightness down/up
+adb shell input keyevent 277 / 278 /279 // Cut/Copy/Paste
+
+ADB shell Command to get Keyboard Types used in Android Devices
+adb shell ime list
+com.android.inputmethod.latin/.LatinIME:
+  mId=com.android.inputmethod.latin/.LatinIME mSettingsActivityName=com.android.inputmethod.latin.settings.SettingsActivity mIsVrOnly=false mSupportsSwitchingToNextInputMethod=true mInlineSuggestionsEnabled=false
+  mIsDefaultResId=0x7f040012
+  Service:
+    priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=false
+    ServiceInfo:
+      name=com.android.inputmethod.latin.LatinIME
+      packageName=com.android.inputmethod.latin
+      labelRes=0x7f0e004b nonLocalizedLabel=null icon=0x0 banner=0x0
+      enabled=true exported=true directBootAware=true
+      permission=android.permission.BIND_INPUT_METHOD
+      flags=0x0
+      ApplicationInfo:
+        packageName=com.android.inputmethod.latin
+        labelRes=0x7f0e004b nonLocalizedLabel=null icon=0x7f070098 banner=0x0
+        processName=com.android.inputmethod.latin
+        taskAffinity=com.android.inputmethod.latin
+        uid=10103 flags=0x30c8be45 privateFlags=0xa4081060 theme=0x0
+        requiresSmallestWidthDp=0 compatibleWidthLimitDp=0 largestWidthLimitDp=0
+        sourceDir=/product/app/LatinIME/LatinIME.apk
+        seinfo=default:targetSdkVersion=28
+        seinfoUser=:complete
+        dataDir=/data/user_de/0/com.android.inputmethod.latin
+        deviceProtectedDataDir=/data/user_de/0/com.android.inputmethod.latin
+        credentialProtectedDataDir=/data/user/0/com.android.inputmethod.latin
+        sharedLibraryFiles=[/system/framework/android.test.base.jar, /system/framework/android.hidl.manager-V1.0-java.jar, /system/framework/android.hidl.base-V1.0-java.jar]
+        enabled=true minSdkVersion=21 targetSdkVersion=28 versionCode=28 targetSandboxVersion=1
+        supportsRtl=true
+        fullBackupContent=true
+        crossProfile=false
+        HiddenApiEnforcementPolicy=0
+        usesNonSdkApi=false
+        allowsPlaybackCapture=false
+
+   ADB shell Command to Set Keyboard Type in Android Devices
+
+   adb shell ime set KEYBOARD_SERVICE NAME
+   ex: adb shell ime set com.android.inputmethod.latin/.LatinIME
+
+
+   Locale change 
+   adb shell "setprop persist.sys.language fr; setprop persist.sys.country CA; setprop ctl.restart zygote"
+   adb shell "setprop persist.sys.locale fr-CA; setprop ctl.restart zygote"
+
+   
